@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Add Student</h1>
-    <form action="{{ route('students.store') }}" method="POST">
+    <form action="{{ route('student.store') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -14,7 +14,7 @@
             <input type="email" class="form-control" name="email" required>
         </div>
         <button type="submit" class="btn btn-primary">Add Student</button>
-        <a href="{{ route('students.index') }}" class="btn btn-secondary">Back</a>
+        <a href="{{ route('student.index') }}" class="btn btn-secondary">Back</a>
     </form>
 </div>
 @endsection

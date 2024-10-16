@@ -15,7 +15,7 @@ return view('students.index', compact('students'));
 
 public function create()
 {
-return view('student.create');
+return view('students.create');
 }
 
 public function store(Request $request)
@@ -26,7 +26,7 @@ $request->validate([
 ]);
 
 Student::create($request->all());
-return redirect()->route('students.index')->with('success', 'Student created successfully.');
+return redirect()->route('student.index')->with('success', 'Student created successfully.');
 }
 
 public function show(Student $student)
@@ -47,12 +47,12 @@ $request->validate([
 ]);
 
 $student->update($request->all());
-return redirect()->route('students.index')->with('success', 'Student updated successfully.');
+return redirect()->route('student.index')->with('success', 'Student updated successfully.');
 }
 
 public function destroy(Student $student)
 {
 $student->delete();
-return redirect()->route('students.index')->with('success', 'Student deleted successfully.');
+return redirect()->route('student.index')->with('success', 'Student deleted successfully.');
 }
 }

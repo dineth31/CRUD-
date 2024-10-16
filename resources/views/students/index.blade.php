@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Students</h1>
-    <a href="{{ route('students.create') }}" class="btn btn-primary">Add Student</a>
+    <a href="{{ route('student.create') }}" class="btn btn-primary">Add Student</a>
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
@@ -23,9 +23,9 @@
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->email }}</td>
                     <td>
-                        <a href="{{ route('students.show', $student) }}" class="btn btn-info">View</a>
-                        <a href="{{ route('students.edit', $student) }}" class="btn btn-warning">Edit</a>
-                        <form action="{{ route('students.destroy', $student) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('student.show', $student) }}" class="btn btn-info">View</a>
+                        <a href="{{ route('student.edit', $student) }}" class="btn btn-warning">Edit</a>
+                        <form action="{{ route('student.destroy', $student) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
